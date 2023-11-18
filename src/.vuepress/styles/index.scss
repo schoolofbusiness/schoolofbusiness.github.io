@@ -1,0 +1,11 @@
+// place your custom styles here
+
+/* Use !important to override theme styles */
+.theme-hope-content p,
+.theme-hope-content ul p,
+.theme-hope-content ol p {
+    text-align: justify;
+    overflow-wrap: break-word;
+    -webkit-hyphens: none !important;
+    hyphens: none !important;
+}
