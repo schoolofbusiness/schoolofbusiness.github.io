@@ -1,0 +1,124 @@
+/* A szabályok csak a projekt elemeire vonatkoznak. */
+.css-projekt,
+.css-projekt * {
+  box-sizing: border-box;
+}
+
+.css-projekt {
+  width: 100%;
+  max-width: 56rem;
+  margin: 0 auto;
+  padding: 1.25rem;
+  background-color: #eaf2ff;
+  color: #1f2937;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.css-projekt h1,
+.css-projekt h2 {
+  margin: 0 0 1rem;
+  padding: 0;
+  border: 0;
+  font-family: inherit;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.css-projekt h1 { font-size: 2rem; }
+.css-projekt h2 { color: hsl(215 70% 30%); font-size: 1.5rem; }
+.css-projekt p { margin: 1em 0; text-align: left; line-height: 1.6; }
+.css-projekt ul { padding-left: 1.5em; line-height: 1.6; }
+
+.css-projekt .fejlec {
+  padding: 1.5rem;
+  border-radius: 12px;
+  background-color: #1453a1;
+  background-image: linear-gradient(120deg, #12386b, #096dd9);
+  color: white;
+}
+
+.css-projekt .felirat {
+  font-size: 0.8rem;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.css-projekt .gomb {
+  display: inline-block;
+  padding: 0.6em 1em;
+  border: 2px solid white;
+  border-radius: 8px;
+  background-color: white;
+  color: #12386b;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.css-projekt .gomb:hover,
+.css-projekt .gomb:focus-visible {
+  background-color: #dbeafe;
+  text-decoration: underline;
+}
+
+.css-projekt .kartya {
+  margin-top: 1.25rem;
+  padding: 1.25rem;
+  border: 1px solid #b9cee8;
+  border-radius: 12px;
+  background-color: white;
+}
+
+.css-projekt .kiemeles {
+  padding: 1rem;
+  border-left: 4px solid #096dd9;
+  background-color: rgb(9 109 217 / 10%);
+}
+
+.css-projekt .tablazat-gorgetes { overflow-x: auto; }
+
+.css-projekt .programtabla {
+  width: 100%;
+  min-width: 28rem;
+  border-collapse: collapse;
+  table-layout: fixed;
+  color: #1f2937;
+}
+
+.css-projekt .programtabla caption {
+  padding: 0.75rem;
+  color: #12386b;
+  font-weight: bold;
+  text-align: left;
+  caption-side: top;
+}
+
+.css-projekt .programtabla th,
+.css-projekt .programtabla td {
+  padding: 0.75rem;
+  border: 1px solid #b9cee8;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.css-projekt .programtabla thead {
+  background-color: #12386b;
+  color: white;
+}
+
+.css-projekt .programtabla tbody tr:nth-child(odd) { background-color: #eff6ff; }
+.css-projekt .programtabla tbody tr:nth-child(even) { background-color: white; }
+.css-projekt .programtabla tfoot { background-color: #dbeafe; font-weight: bold; }
+.css-projekt .programtabla td:last-child { text-align: right; }
+
+.css-projekt .lablec {
+  margin-top: 1.25rem;
+  color: #475569;
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+.css-projekt .lablec p { text-align: center; }

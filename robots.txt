@@ -1,0 +1,4 @@
+User-agent:*
+Disallow:
+
+Sitemap: https://schoolofbusiness.github.io/sitemap.xml
