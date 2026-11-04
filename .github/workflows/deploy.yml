@@ -1,0 +1,68 @@
+name: Weboldal buildelése és közzététele
+
+on:
+  push:
+    branches:
+      - data
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: VuePress build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Forráskód letöltése
+        uses: actions/checkout@v4
+
+      - name: Node.js beállítása
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Függőségek telepítése
+        run: npm ci
+
+      - name: Weboldal generálása
+        run: npm run docs:build
+        env:
+          SITE_PASSWORD: ${{ secrets.SITE_PASSWORD }}
+
+      - name: A build feltöltése a gh-pages ágra
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: src/.vuepress/dist
+          user_name: schoolofbusiness
+          user_email: redai.david@sobszeged.hu
+
+      - name: GitHub Pages beállítása
+        uses: actions/configure-pages@v5
+
+      - name: Elkészült weboldal feltöltése
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: src/.vuepress/dist
+
+  deploy:
+    name: Közzététel GitHub Pages-re
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - name: Közzététel
+        id: deployment
+        uses: actions/deploy-pages@v4

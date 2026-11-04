@@ -1,0 +1,47 @@
+{
+  "name": "sob",
+  "version": "2.0.0",
+  "description": "Szegedi SzB School of Business",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "packageManager": "npm@11.11.0",
+  "engines": {
+    "node": ">=22.18.0",
+    "npm": ">=10"
+  },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env node_modules/vuepress/bin/vuepress.js dev src --clean-cache --clean-temp",
+    "dev": "npm start",
+    "build": "npm run docs:build",
+    "docs:build": "node --env-file-if-exists=.env node_modules/vuepress/bin/vuepress.js build src",
+    "docs:clean-dev": "npm start",
+    "docs:dev": "npm start",
+    "docs:update-package": "npx vp-update"
+  },
+  "devDependencies": {
+    "@fortawesome/fontawesome-svg-core": "^7.3.1",
+    "@fortawesome/free-brands-svg-icons": "^7.3.1",
+    "@fortawesome/free-regular-svg-icons": "^7.3.1",
+    "@fortawesome/free-solid-svg-icons": "^7.3.1",
+    "@vue/repl": "^4.1.1",
+    "@vuepress/bundler-vite": "2.0.0-rc.31",
+    "@vuepress/plugin-revealjs": "2.0.0-rc.137",
+    "chart.js": "^4.5.1",
+    "echarts": "^6.0.0",
+    "flowchart.ts": "^3.0.1",
+    "katex": "^0.18.9",
+    "markdown-it": "^15.0.3",
+    "mermaid": "^12.0.0",
+    "sass": "^1.105.0",
+    "typescript": "^6.0.0",
+    "vue": "3.5.44",
+    "vuepress": "2.0.0-rc.31",
+    "vuepress-theme-hope": "2.0.0-rc.110"
+  },
+  "overrides": {
+    "@vuepress/plugin-markdown-math": {
+      "@mdit/plugin-katex-slim": "1.1.3"
+    }
+  }
+}

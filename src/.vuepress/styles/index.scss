@@ -1,0 +1,119 @@
+@use "@sass-palette/hope-config";
+@use "sass:color";
+
+// A beta.237 megjelenésének megtartása a jelenlegi Theme Hope mellett.
+// Az értékek forrása az eredeti téma normalize, hero-info és container stílusa.
+
+#app {
+    --navbar-c-bg: var(--vp-c-bg-soft);
+}
+
+@media (min-width: hope-config.$pc) {
+    body {
+        font-size: 17px;
+    }
+}
+
+/* Use !important to override theme styles */
+[vp-content] p {
+    text-align: justify;
+    overflow-wrap: break-word;
+    -webkit-hyphens: none !important;
+    hyphens: none !important;
+}
+
+// Az eredeti címsorok betűvastagsága.
+.vp-page-title h1,
+[vp-content] :is(h1, h2, h3, h4, h5, h6) {
+    font-weight: 500;
+}
+
+.vp-project-home .vp-hero-title {
+    background: linear-gradient(
+        120deg,
+        #{color.scale(hope-config.$theme-color, $lightness: 10%)},
+        #{hope-config.$theme-color} 30%,
+        #{color.adjust(hope-config.$theme-color, $hue: 60deg)} 100%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.vp-feature {
+    color: var(--vp-c-text-subtle);
+}
+
+.vp-navbar .auto-link,
+.vp-footer-wrapper {
+    color: #666;
+}
+
+[data-theme="dark"] {
+    .vp-navbar .auto-link,
+    .vp-footer-wrapper {
+        color: #999;
+    }
+
+    .vp-toc-link {
+        color: #666;
+    }
+}
+
+.vp-navbar .auto-link.route-link-active,
+.vp-navbar .auto-link:hover,
+.vp-toc-item.active > .vp-toc-link,
+.vp-toc-item:hover > .vp-toc-link {
+    color: var(--vp-c-accent);
+}
+
+// A régi Markdown-dobozok színei és hangsúlyos bal oldali szegélye.
+:root {
+    --info-c-accent: #4cb3d4;
+    --info-c-text: #193c47;
+    --info-c-soft: #eef9fd;
+    --note-c-accent: #ccc;
+    --note-c-text: #474748;
+    --note-c-soft: #fdfdfe;
+    --tip-c-accent: #009400;
+    --tip-c-text: #003100;
+    --tip-c-soft: #e6f6e6;
+    --warning-c-accent: #e6a700;
+    --warning-c-text: #4d3800;
+    --warning-c-soft: #fff8e6;
+    --caution-c-accent: #e13238;
+    --caution-c-text: #4b1113;
+    --caution-c-soft: #ffebec;
+}
+
+[data-theme="dark"] {
+    --info-c-text: #eef9fd;
+    --info-c-soft: #193c47;
+    --note-c-text: #fdfdfe;
+    --note-c-soft: #474748;
+    --tip-c-text: #e6f6e6;
+    --tip-c-soft: #003100;
+    --warning-c-text: #fff8e6;
+    --warning-c-soft: #4d3800;
+    --caution-c-text: #ffebec;
+    --caution-c-soft: #4b1113;
+}
+
+.hint-container:is(.info, .note, .tip, .warning, .caution) {
+    font-size: inherit;
+    margin-block: 1rem;
+    padding: 0.25rem 1rem;
+    border-inline-start: 0.3rem solid var(--hint-c-accent);
+    border-radius: 0.5rem;
+
+    > .hint-container-title::before {
+        background-color: var(--hint-c-accent);
+    }
+}
+
+// A tartalomjegyzék csak a jobb oldali, széles képernyős nézetben jelenjen meg.
+@media (max-width: (hope-config.$pc - 0.02px)) {
+    .vp-toc-placeholder {
+        display: none !important;
+    }
+}

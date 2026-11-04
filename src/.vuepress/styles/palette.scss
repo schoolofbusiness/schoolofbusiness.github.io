@@ -1,0 +1,36 @@
+@use "sass:color";
+
+// A korábbi Theme Hope 2.0.0-beta.237 palettája az új változónevekkel.
+// Az eredeti alap témaszín továbbra is a config.scss fájlban található.
+$vp-font: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", STHeiti, "Microsoft YaHei", SimSun, sans-serif';
+$vp-font-heading: '"Georgia Pro", Crimson, Georgia, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", STHeiti, "Microsoft YaHei", SimSun, sans-serif';
+$vp-font-mono: 'Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace';
+
+$vp-c-bg: (light: #fff, dark: #0d1117);
+$vp-c-bg-alt: (light: #f8f8f8, dark: #161b22);
+$vp-c-bg-elv: (light: #fff, dark: #161b22);
+$vp-c-text: (light: #2c3e50, dark: #9e9e9e);
+$vp-c-text-mute: (
+    light: color.scale(#2c3e50, $lightness: 10%),
+    dark: color.scale(#9e9e9e, $lightness: 10%),
+);
+$vp-c-text-subtle: (
+    light: color.scale(#2c3e50, $lightness: 20%),
+    dark: color.scale(#9e9e9e, $lightness: 20%),
+);
+$vp-c-border: (light: #eaecef, dark: #30363d);
+$vp-c-divider: (light: #eaecef, dark: #30363d);
+$vp-c-control: (light: #f8f8f8, dark: #161b22);
+$vp-c-control-hover: (light: #efeef4, dark: #21262c);
+
+// A régi sötét nézet élénk kék hivatkozásai és kijelölései.
+$vp-c-accent: (light: #096dd9, dark: #0085ff);
+$vp-c-accent-bg: (light: #096dd9, dark: #0085ff);
+$vp-c-accent-hover: (
+    light: color.scale(#096dd9, $lightness: 10%),
+    dark: color.scale(#0085ff, $lightness: 10%),
+);
+$vp-c-accent-soft: (
+    light: rgb(9 109 217 / 15%),
+    dark: rgb(9 109 217 / 15%),
+);
